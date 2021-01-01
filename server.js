@@ -1,6 +1,6 @@
 const express = require('express')
 const path = require('path')
-const PORT = process.env.PORT || 3000
+const PORT = process.env.PORT || 80
 
 // const webpack = require('webpack');
 // const webpackDevMiddleware = require('webpack-dev-middleware');
@@ -17,9 +17,9 @@ app.use(express.static(path.join(__dirname, 'dist')))
 //   publicPath: config.output.publicPath,
 // }));
 
-app.get('/', function (req, res) {
-    res.sendFile(path.join(__dirname, 'dist', 'index.html'))
-})
+// app.get('/', function (req, res) {
+//     res.sendFile(path.join(__dirname, 'dist', 'index.html'))
+// })
 
 // Serve the files on port 3000.
 app.listen(PORT, function () {
