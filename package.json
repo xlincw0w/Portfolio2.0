@@ -12,6 +12,12 @@
         "type": "git",
         "url": "git+https://github.com/xlincw0w/portfolio2.0.git"
     },
+
+    "engines": {
+        "node": ">=15.3.0",
+        "npm": ">=6.0.0"
+    },
+
     "author": "xlincw0w",
     "license": "GPL",
     "dependencies": {
