@@ -1,5 +1,6 @@
 const express = require('express')
 const path = require('path')
+const PORT = process.env.PORT || 3000
 
 // const webpack = require('webpack');
 // const webpackDevMiddleware = require('webpack-dev-middleware');
@@ -21,6 +22,6 @@ app.get('/', function (req, res) {
 })
 
 // Serve the files on port 3000.
-app.listen(3000, function () {
-    console.log('Server listenning on port 3000!\n')
+app.listen(PORT, function () {
+    console.log(`Server listenning on port ${PORT} !\n`)
 })
