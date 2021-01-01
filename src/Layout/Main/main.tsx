@@ -6,7 +6,7 @@ import Home from '../Home/home'
 
 const Main: React.FunctionComponent<{}> = () => {
     return (
-        <div className='mx-auto font-openSans'>
+        <div className='mx-auto font-openSans overflow-x-hidden'>
             <Router>
                 <Switch>
                     <Route path='/'>
