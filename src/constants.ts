@@ -1,5 +1,5 @@
 export const constants = {
-    url: 'http://localhost:3000',
+    url: 'https://khaledkhazem.herokuapp.com',
 
     // regex
     username_rg: /^[A-Za-z]+[A-Za-z0-9 ]*$/,
