@@ -11,12 +11,10 @@
         "type": "git",
         "url": "git+https://github.com/xlincw0w/portfolio2.0.git"
     },
-
     "engines": {
         "node": ">=14.15.0",
         "npm": ">=6.0.0"
     },
-
     "author": "xlincw0w",
     "license": "GPL",
     "dependencies": {
@@ -52,6 +50,7 @@
         "concurrently": "^5.3.0",
         "cors": "^2.8.5",
         "css-loader": "^5.0.1",
+        "dotenv": "^8.2.0",
         "express": "^4.17.1",
         "file-loader": "^6.2.0",
         "html-webpack-plugin": "^4.5.0",

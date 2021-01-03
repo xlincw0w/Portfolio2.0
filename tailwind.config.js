@@ -13,6 +13,11 @@ module.exports = {
                 popupsBack: "url('../Assets/Images/orangenwhite.jpg')",
                 popupsBack2: "url('../Assets/Images/orangenwhite2.jpg')",
             },
+            spacing: {
+                128: '32rem',
+                144: '36rem',
+                192: '48rem',
+            },
         },
     },
     variants: {

@@ -1,7 +1,13 @@
 import React from 'react'
+import Modal from '@material-ui/core/Modal'
+import Fade from '@material-ui/core/Fade'
+import TextField from '@material-ui/core/TextField'
+import FormControl from '@material-ui/core/FormControl'
 import bvideo from '../../Assets/Videos/bvideo.webm'
 
 const Header = () => {
+    const [openContact, setOpenContact] = React.useState<boolean>(false)
+
     return (
         <React.Fragment>
             <div className='w-full h-full shadow select-none'>
@@ -10,6 +16,46 @@ const Header = () => {
                         <source src={bvideo} type='video/mp4' />
                     </video>
                 </div>
+                <Modal className='h-screen' open={openContact} onClose={() => setOpenContact(false)} closeAfterTransition>
+                    <Fade in={openContact}>
+                        <div className='h-screen flex overflow-y-scroll'>
+                            <div className='w-full xl:w-3/6 h-192 my-auto mx-auto bg-popupsBack2 bg-cover bg-center rounded shadow'>
+                                <div className='text-center'>
+                                    <div className='mb-10'>
+                                        <p className='text-6xl mx-auto pt-10 textanimate'>❖</p>
+                                    </div>
+                                    <FormControl className='w-full'>
+                                        <div className='block my-4'>
+                                            <TextField className='w-1/2' type='text' label='Full name' variant='outlined' color='secondary' required />
+                                        </div>
+                                        <div className='block my-4'>
+                                            <TextField className='w-1/2' type='email' label='E-mail' variant='outlined' color='secondary' required />
+                                        </div>
+                                        <div className='block my-4'>
+                                            <TextField className='w-1/2' type='text' label='Subject' variant='outlined' color='secondary' required />
+                                        </div>
+                                        <div className='block my-4'>
+                                            <TextField className='w-1/2' label='How can i help you ?' multiline rows={4} variant='outlined' color='secondary' required />
+                                        </div>
+                                        <div className=''>
+                                            <button
+                                                type='submit'
+                                                className='mx-5 shadow inline-block px-6 py-2 text-xs font-medium leading-6 text-center text-white uppercase transition bg-yellow-500 rounded shadow ripple hover:shadow-lg hover:bg-yellow-600 focus:outline-none'>
+                                                Submit
+                                            </button>
+                                            <button
+                                                onClick={() => setOpenContact(false)}
+                                                className='mx-5 shadow inline-block px-6 py-2 text-xs font-medium leading-6 text-center text-yellow-500 uppercase transition bg-transparent border-2 border-yellow-500 rounded ripple hover:bg-yellow-100 focus:outline-none'>
+                                                Exit
+                                            </button>
+                                        </div>
+                                        <div className='block my-5'></div>
+                                    </FormControl>
+                                </div>
+                            </div>
+                        </div>
+                    </Fade>
+                </Modal>
                 <div className='bg-black bg-opacity-20 w-full h-screen relative grid grid-cols-3 '>
                     <div className='w-full h-full col-span-2'></div>
                     <div className='w-full h-full'></div>
@@ -30,7 +76,9 @@ const Header = () => {
                                     Hire me now
                                 </button>
                                 <p className='text-gray-300 text-2xl inline mx-10'>or</p>
-                                <button className='shadow inline-block px-6 py-2 text-xs font-medium leading-6 text-center text-yellow-500 uppercase transition bg-transparent border-2 border-yellow-500 rounded ripple hover:bg-yellow-100 focus:outline-none'>
+                                <button
+                                    onClick={() => setOpenContact(true)}
+                                    className='shadow inline-block px-6 py-2 text-xs font-medium leading-6 text-center text-yellow-500 uppercase transition bg-transparent border-2 border-yellow-500 rounded ripple hover:bg-yellow-100 focus:outline-none'>
                                     Contact me
                                 </button>
                             </div>
