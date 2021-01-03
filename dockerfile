@@ -2,9 +2,9 @@ FROM node:15.3.0
 
 WORKDIR /app
 
+COPY /api /api
 COPY ./public ./public
 COPY .babelrc .babelrc
-COPY server.js server.js
 COPY package.json package.json
 COPY webpack.dev.js webpack.dev.js
 COPY webpack.prod.js webpack.prod.js

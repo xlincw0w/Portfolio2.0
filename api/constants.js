@@ -1,6 +1,4 @@
-export const constants = {
-    url: 'http://localhost:3000',
-
+module.exports = {
     // regex
     username_rg: /^[A-Za-z]+[A-Za-z0-9 ]*$/,
     alph_rg: /^[A-Za-zéàè]+[A-Za-zéàè]*$/,
