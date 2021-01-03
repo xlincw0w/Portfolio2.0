@@ -13,7 +13,7 @@ app.use('/contact', contact)
 
 app.use(express.static(path.join(__dirname, '../dist')))
 
-app.get('/', (req, res) => {
+app.get('/endpointCheck', (req, res) => {
     res.send('Endpoint reached.')
 })
 
