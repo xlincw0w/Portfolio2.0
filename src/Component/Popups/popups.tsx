@@ -26,7 +26,7 @@ const Popups: React.FunctionComponent<{}> = () => {
                                     <div className='flex h-full'>
                                         <div className='m-auto'>
                                             <FaPython size={40} className='inline pr-2 text-gray-100' />
-                                            <p className='text-gray-100 text-sm xl:text-base 2xl:text-xl inline pl-2'>Python</p>
+                                            <p className='text-gray-100 text-sm xl:text-base 2xl:text-xl hidden sm:inline pl-2'>Python</p>
                                         </div>
                                     </div>
                                 </div>
@@ -34,7 +34,7 @@ const Popups: React.FunctionComponent<{}> = () => {
                                     <div className='flex h-full'>
                                         <div className='m-auto'>
                                             <IoLogoJavascript size={40} className='inline pr-2 text-gray-100' />
-                                            <p className='text-gray-100 text-sm xl:text-base 2xl:text-xl inline pl-2'>Javascript</p>
+                                            <p className='text-gray-100 text-sm xl:text-base 2xl:text-xl hidden sm:inline pl-2'>Javascript</p>
                                         </div>
                                     </div>
                                 </div>
@@ -42,7 +42,7 @@ const Popups: React.FunctionComponent<{}> = () => {
                                     <div className='flex h-full'>
                                         <div className='m-auto'>
                                             <DiGit size={40} className='inline pr-2' />
-                                            <p className='text-gray-600 text-sm xl:text-base 2xl:text-xl inline pl-2'>Git &amp; Github</p>
+                                            <p className='text-gray-600 text-sm xl:text-base 2xl:text-xl hidden sm:inline pl-2'>Git &amp; Github</p>
                                         </div>
                                     </div>
                                 </div>
@@ -50,7 +50,7 @@ const Popups: React.FunctionComponent<{}> = () => {
                                     <div className='flex h-full'>
                                         <div className='m-auto'>
                                             <SiKeras size={40} className='inline pr-2' />
-                                            <p className='text-gray-600 text-sm xl:text-base 2xl:text-xl inline pl-2'>Keras</p>
+                                            <p className='text-gray-600 text-sm xl:text-base 2xl:text-xl hidden sm:inline pl-2'>Keras</p>
                                         </div>
                                     </div>
                                 </div>
@@ -58,7 +58,7 @@ const Popups: React.FunctionComponent<{}> = () => {
                                     <div className='flex h-full'>
                                         <div className='m-auto'>
                                             <SiReact size={40} className='inline pr-2' />
-                                            <p className='text-gray-600 text-sm xl:text-base 2xl:text-xl inline pl-2'>React</p>
+                                            <p className='text-gray-600 text-sm xl:text-base 2xl:text-xl hidden sm:inline pl-2'>React</p>
                                         </div>
                                     </div>
                                 </div>
@@ -66,7 +66,7 @@ const Popups: React.FunctionComponent<{}> = () => {
                                     <div className='flex h-full'>
                                         <div className='m-auto'>
                                             <FaNetworkWired size={40} className='inline pr-2' />
-                                            <p className='text-gray-600 text-sm xl:text-base 2xl:text-xl inline pl-2'>Networking</p>
+                                            <p className='text-gray-600 text-sm xl:text-base 2xl:text-xl hidden sm:inline pl-2'>Networking</p>
                                         </div>
                                     </div>
                                 </div>
@@ -74,7 +74,7 @@ const Popups: React.FunctionComponent<{}> = () => {
                                     <div className='flex h-full'>
                                         <div className='m-auto'>
                                             <GiArtificialIntelligence size={40} className='inline pr-2' />
-                                            <p className='text-gray-600 text-sm xl:text-base 2xl:text-xl inline pl-2'>Data mining</p>
+                                            <p className='text-gray-600 text-sm xl:text-base 2xl:text-xl hidden sm:inline pl-2'>Data mining</p>
                                         </div>
                                     </div>
                                 </div>
@@ -82,7 +82,7 @@ const Popups: React.FunctionComponent<{}> = () => {
                                     <div className='flex h-full'>
                                         <div className='m-auto'>
                                             <FaNodeJs size={40} className='inline pr-2' />
-                                            <p className='text-gray-600 text-sm xl:text-base 2xl:text-xl inline pl-2'>Node</p>
+                                            <p className='text-gray-600 text-sm xl:text-base 2xl:text-xl hidden sm:inline pl-2'>Node</p>
                                         </div>
                                     </div>
                                 </div>
@@ -90,7 +90,7 @@ const Popups: React.FunctionComponent<{}> = () => {
                                     <div className='flex h-full'>
                                         <div className='m-auto'>
                                             <FaDocker size={40} className='inline pr-2' />
-                                            <p className='text-gray-600 text-sm xl:text-base 2xl:text-xl inline pl-2'>Docker</p>
+                                            <p className='text-gray-600 text-sm xl:text-base 2xl:text-xl hidden sm:inline pl-2'>Docker</p>
                                         </div>
                                     </div>
                                 </div>
@@ -99,9 +99,9 @@ const Popups: React.FunctionComponent<{}> = () => {
                     </div>
                 </div>
                 <div data-aos='zoom-out-right'>
-                    <div className='my-40 w-full lg:w-1/2 h-96 mr-auto shadow bg-gray-200 bg-opacity-80 rounded-md xl:ml-14'>
+                    <div className='my-10 sm:my-40 w-full lg:w-1/2 h-96 mr-auto shadow bg-gray-200 bg-opacity-80 rounded-md xl:ml-14'>
                         <div className='text-center'>
-                            <div className='border-b-2 border-yellow-500 pb-4 mx-40'>
+                            <div className='border-b-2 border-yellow-500 pb-4 mx-10 sm:mx-40'>
                                 <p className='text-yellow-500 text-xl pt-4'>Educational path</p>
                             </div>
                             <div>
@@ -140,9 +140,9 @@ const Popups: React.FunctionComponent<{}> = () => {
                     </div>
                 </div>
                 <div data-aos='zoom-out-left'>
-                    <div className='my-40 w-full lg:w-1/2 h-96 ml-auto shadow bg-gray-200 bg-opacity-80 rounded-md xl:mr-14'>
+                    <div className='my-10 sm:my-40 w-full lg:w-1/2 h-128 sm:h-96 ml-auto shadow bg-gray-200 bg-opacity-80 rounded-md xl:mr-14'>
                         <div className='text-center'>
-                            <div className='border-b-2 border-yellow-500 pb-4 mx-40'>
+                            <div className='border-b-2 border-yellow-500 pb-4 mx-10 sm:mx-40'>
                                 <p className='text-yellow-500 text-xl pt-4'>How did i get here ?</p>
                             </div>
                             <div className='text-gray-700 text-sm xl:text-base mt-10 px-4 xl:px-8 2xl:px-20'>
