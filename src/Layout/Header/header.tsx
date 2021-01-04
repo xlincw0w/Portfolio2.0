@@ -6,9 +6,12 @@ import bvideo from '../../Assets/Videos/bvideo.webm'
 import { FormControl } from '@material-ui/core'
 import { constants } from '../../constants'
 import { Alert } from '@material-ui/lab'
+import Backdrop from '@material-ui/core/Backdrop'
+import CircularProgress from '@material-ui/core/CircularProgress'
 import Axios from 'axios'
 
 const Header = () => {
+    const [backdrop, setBackdrop] = React.useState<boolean>(false)
     const [openContact, setOpenContact] = React.useState<boolean>(false)
 
     const [fullname, setFullname] = React.useState<string>('')
@@ -26,54 +29,50 @@ const Header = () => {
         message: '',
     })
 
-    const HandleSubmit = () => {
-        if (!constants.username_rg.test(fullname)) {
+    const Allgood = (mess: string) => {
+        setAlertInfo({
+            severity: 1,
+            message: mess,
+        })
+        setTimeout(() => {
             setAlertInfo({
-                severity: -1,
-                message: 'Please type a correct fullname',
+                severity: 0,
+                message: '',
             })
-            setTimeout(() => {
-                setAlertInfo({
-                    severity: 0,
-                    message: '',
-                })
-            }, 3000)
+        }, 3000)
+
+        setBackdrop(false)
+    }
+
+    const Allbad = (err: string) => {
+        setAlertInfo({
+            severity: -1,
+            message: err,
+        })
+        setTimeout(() => {
+            setAlertInfo({
+                severity: 0,
+                message: '',
+            })
+        }, 3000)
+
+        setBackdrop(false)
+    }
+
+    const HandleSubmit = () => {
+        setBackdrop(true)
+
+        if (!constants.username_rg.test(fullname)) {
+            Allbad('Please type a correct fullname')
             return -1
         } else if (!constants.email_rg.test(email)) {
-            setAlertInfo({
-                severity: -1,
-                message: 'Please type a correct email',
-            })
-            setTimeout(() => {
-                setAlertInfo({
-                    severity: 0,
-                    message: '',
-                })
-            }, 3000)
+            Allbad('Please type a correct email')
             return -1
         } else if (subject.length === 0) {
-            setAlertInfo({
-                severity: -1,
-                message: 'Please write a subject title',
-            })
-            setTimeout(() => {
-                setAlertInfo({
-                    severity: 0,
-                    message: '',
-                })
-            }, 3000)
+            Allbad('Please write a subject title')
             return -1
         } else if (message.length === 0) {
-            setAlertInfo({
-                severity: -1,
-                message: 'Please write a short message',
-            })
-            setTimeout(() => {
-                setAlertInfo({
-                    severity: 0,
-                    message: '',
-                })
-            }, 3000)
+            Allbad('Please write a short message')
             return -1
         }
         Axios.post(constants.url + '/contact/submitContact', {
@@ -84,42 +83,15 @@ const Header = () => {
         })
             .then((res) => {
                 if (res.data.updated) {
-                    setAlertInfo({
-                        severity: 1,
-                        message: 'Your message was sent successfully',
-                    })
-                    setTimeout(() => {
-                        setAlertInfo({
-                            severity: 0,
-                            message: '',
-                        })
-                    }, 3000)
+                    Allgood('Your message was sent successfully')
                     return 0
                 } else {
-                    setAlertInfo({
-                        severity: -1,
-                        message: 'A problem occured, please retry later !',
-                    })
-                    setTimeout(() => {
-                        setAlertInfo({
-                            severity: 0,
-                            message: '',
-                        })
-                    }, 3000)
+                    Allbad('A problem occured, please retry later !')
                     return -1
                 }
             })
             .catch(() => {
-                setAlertInfo({
-                    severity: -1,
-                    message: 'A problem occured, please retry later !',
-                })
-                setTimeout(() => {
-                    setAlertInfo({
-                        severity: 0,
-                        message: '',
-                    })
-                }, 3000)
+                Allbad('A problem occured, please retry later !')
                 return -1
             })
     }
@@ -141,6 +113,9 @@ const Header = () => {
                                         <p className='text-6xl mx-auto pt-10 textanimate'>❖</p>
                                     </div>
                                     <FormControl className='w-full'>
+                                        <Backdrop open={backdrop} style={{ zIndex: 20 }}>
+                                            <CircularProgress color='inherit' />
+                                        </Backdrop>
                                         <div className='block my-4'>
                                             <TextField
                                                 value={fullname}
