@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Modal from '@material-ui/core/Modal'
 import Fade from '@material-ui/core/Fade'
 import TextField from '@material-ui/core/TextField'
@@ -8,7 +8,10 @@ import { constants } from '../../constants'
 import { Alert } from '@material-ui/lab'
 import Backdrop from '@material-ui/core/Backdrop'
 import CircularProgress from '@material-ui/core/CircularProgress'
+import Typical from 'react-typical'
 import Axios from 'axios'
+
+const domain = ['web developer', 3000, 'mobile developer', 3000, 'data analyst', 3000, 'n Information system engineer', 3000]
 
 const Header = () => {
     const [backdrop, setBackdrop] = React.useState<boolean>(false)
@@ -157,6 +160,7 @@ const Header = () => {
                                                 value={message}
                                                 onChange={(e) => setMessage(e.target.value)}
                                                 className='w-5/6 sm:w-1/2'
+                                                type='text'
                                                 label='How can i help you ?'
                                                 multiline
                                                 rows={4}
@@ -173,6 +177,7 @@ const Header = () => {
                                                 Submit
                                             </button>
                                             <button
+                                                id='exit'
                                                 onClick={() => setOpenContact(false)}
                                                 className='mx-5 shadow inline-block px-6 py-2 text-xs font-medium leading-6 text-center text-yellow-500 uppercase transition bg-transparent border-2 border-yellow-500 rounded ripple hover:bg-yellow-100 focus:outline-none'>
                                                 Exit
@@ -202,7 +207,11 @@ const Header = () => {
                             </p>
                             <p className='text-2xl mt-4 text-gray-200'>
                                 <p className='xl:inline'>
-                                    I'm a <span className='text-yellow-500 text-3xl'>web developer</span> from Algeria.{' '}
+                                    I'm a{' '}
+                                    <div className='text-yellow-500 text-3xl inline-block anime-domain'>
+                                        {<Typical steps={domain} loop={Infinity} wrapper='p' transitionTime={3000} />}
+                                    </div>{' '}
+                                    from Algeria.{' '}
                                 </p>
                                 I can help you build your next
                                 <span className='text-yellow-500'> Business App.</span>
@@ -213,6 +222,7 @@ const Header = () => {
                                 </button>
                                 <p className='hidden sm:inline-block text-gray-300 text-2xl inline mx-10'>or</p>
                                 <button
+                                    id='contact-me-button'
                                     onClick={() => setOpenContact(true)}
                                     className='shadow inline-block px-6 py-2 text-xs font-medium leading-6 text-center text-yellow-500 uppercase transition bg-transparent border-2 border-yellow-500 rounded ripple hover:bg-yellow-100 focus:outline-none'>
                                     Contact me
