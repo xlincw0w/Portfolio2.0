@@ -11,7 +11,7 @@ import CircularProgress from '@material-ui/core/CircularProgress'
 import Typical from 'react-typical'
 import Axios from 'axios'
 
-const domain = ['web developer', 3000, 'mobile developer', 3000, 'data analyst', 3000]
+const domain = ['software engineer', 3000, 'data scientist', 3000, 'web / mobile developer', 3000]
 
 const Header = () => {
     const [backdrop, setBackdrop] = React.useState<boolean>(false)
